@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		27537D0A2F962EE200569EF0 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 27537D092F962EE200569EF0 /* FirebaseCore */; };
+		27537D0C2F962EE200569EF0 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 27537D0B2F962EE200569EF0 /* FirebaseMessaging */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		278D29952F90CFCA008DA219 /* HomeBarMixOptimizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeBarMixOptimizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +41,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27537D0C2F962EE200569EF0 /* FirebaseMessaging in Frameworks */,
+				27537D0A2F962EE200569EF0 /* FirebaseCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +85,8 @@
 			);
 			name = HomeBarMixOptimizer;
 			packageProductDependencies = (
+				27537D092F962EE200569EF0 /* FirebaseCore */,
+				27537D0B2F962EE200569EF0 /* FirebaseMessaging */,
 			);
 			productName = HomeBarMixOptimizer;
 			productReference = 278D29952F90CFCA008DA219 /* HomeBarMixOptimizer.app */;
@@ -107,6 +116,9 @@
 			);
 			mainGroup = 278D298C2F90CFCA008DA219;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				27537D082F962EE200569EF0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 278D29962F90CFCA008DA219 /* Products */;
 			projectDirPath = "";
@@ -143,12 +155,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = HomeBarMixOptimizer/HomeBarMixOptimizer.entitlements;
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HomeBarMixOptimizer/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Clucktail Home Mix";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires access to your device's camera to enable";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need access to your microphone to record audio.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need access to your photo library to upload photos.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -158,7 +174,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.clucktailhomemix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -180,12 +196,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = HomeBarMixOptimizer/HomeBarMixOptimizer.entitlements;
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HomeBarMixOptimizer/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Clucktail Home Mix";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires access to your device's camera to enable";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need access to your microphone to record audio.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need access to your photo library to upload photos.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -195,7 +215,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.clucktailhomemix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -353,6 +373,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		27537D082F962EE200569EF0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.12.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		27537D092F962EE200569EF0 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 27537D082F962EE200569EF0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		27537D0B2F962EE200569EF0 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 27537D082F962EE200569EF0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 278D298D2F90CFCA008DA219 /* Project object */;
 }
