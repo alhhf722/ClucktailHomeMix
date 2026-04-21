@@ -14,35 +14,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    static var ngobrclhxyhuwlruoau = UIInterfaceOrientationMask.all
-    func application(_ acloomeewksjvzfepq: UIApplication, supportedInterfaceOrientationsFor zqrguluqupispk: UIWindow?) -> UIInterfaceOrientationMask {
-        AppDelegate.ngobrclhxyhuwlruoau
+    static var hffpgzmzuifnvnzauozu = UIInterfaceOrientationMask.all
+    func application(_ bjustuefwpgoyyeloe: UIApplication, supportedInterfaceOrientationsFor omainxrhiscpjwpbmkta: UIWindow?) -> UIInterfaceOrientationMask {
+        AppDelegate.hffpgzmzuifnvnzauozu
     }
 
-    func application(_ ezoeawoyxquguhpuopwq: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(_ vkpqulmnpmkombuouie: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         FirebaseApp.configure()
 
         Messaging.messaging().delegate = self
 
         UNUserNotificationCenter.current().delegate = self
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { jkxnuaemuiqgnafimhi, ltuiyxwemlnjqlobag in
-            if let punehogayboogfagvzef = ltuiyxwemlnjqlobag {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { yvuueexatbktrqeep, lpukokahkqbzujzniuc in
+            if let ojhezjojaexwwcqamur = lpukokahkqbzujzniuc {
             }
             DispatchQueue.main.async {
                 NotificationCenter.default.post(name: .pushPermissionResolved, object: nil)
             }
         }
 
-        ezoeawoyxquguhpuopwq.registerForRemoteNotifications()
+        vkpqulmnpmkombuouie.registerForRemoteNotifications()
 
-        Messaging.messaging().token { vvgwjlczevgsxrn, rpqeebeapoloiu in
-            if let token = vvgwjlczevgsxrn {
+        Messaging.messaging().token { iozkkjkzhyvuniebeli, sszuaehnhvikriuom in
+            if let token = iozkkjkzhyvuniebeli {
                 UserDefaults.standard.set(token, forKey: "FCMToken")
                 DispatchQueue.main.async {
                     NotificationCenter.default.post(name: .fcmTokenReceived, object: nil)
                 }
-            } else if let zejiycepaimjieu = rpqeebeapoloiu {
+            } else if let qtcpaaogjwenbittmaoggk = sszuaehnhvikriuom {
             }
         }
 
@@ -50,29 +50,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
-    func application(_ ckhyayaabzbwoyopulsee: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken yickenaharltxx: Data) {
-        let fonloateoqofeoetio = yickenaharltxx.map { String(format: "%02.2hhx", $0) }.joined()
-        Messaging.messaging().apnsToken = yickenaharltxx
+    func application(_ awylaseppechuxcibizx: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken bowufhcvrtqhugy: Data) {
+        let ofofcvywuivezwemif = bowufhcvrtqhugy.map { String(format: "%02.2hhx", $0) }.joined()
+        Messaging.messaging().apnsToken = bowufhcvrtqhugy
     }
 
-    func application(_ zwmywssbfkiufaxyoemnwq: UIApplication, didFailToRegisterForRemoteNotificationsWithError fajfojvwejqwow: Error) {
+    func application(_ bghgcybfxnqfimnr: UIApplication, didFailToRegisterForRemoteNotificationsWithError biesyialsoxcewi: Error) {
     }
 }
 
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
 
-    func userNotificationCenter(_ kulxnejuepgtptjki: UNUserNotificationCenter,
-                                willPresent thjhgmnbvzyayjoeei: UNNotification,
-                                withCompletionHandler vvtcilquzphjpo: @escaping (UNNotificationPresentationOptions) -> Void) {
-        let userInfo = thjhgmnbvzyayjoeei.request.content.userInfo
-        vvtcilquzphjpo([.banner, .badge, .sound])
+    func userNotificationCenter(_ hxxmpjeiorcieejocf: UNUserNotificationCenter,
+                                willPresent lvgmquuxaaxaomesnpa: UNNotification,
+                                withCompletionHandler oefaicyxnzkueaj: @escaping (UNNotificationPresentationOptions) -> Void) {
+        let userInfo = lvgmquuxaaxaomesnpa.request.content.userInfo
+        oefaicyxnzkueaj([.banner, .badge, .sound])
     }
 
     func userNotificationCenter(_ center: UNUserNotificationCenter,
-                                didReceive ofaxsrxzfzwifokrftoiw: UNNotificationResponse,
+                                didReceive bjopjosuuozgejh: UNNotificationResponse,
                                 withCompletionHandler completionHandler: @escaping () -> Void) {
-        let oupwnsiieialwybpvas = ofaxsrxzfzwifokrftoiw.notification.request.content.userInfo
+        let aszgbroojluhwooak = bjopjosuuozgejh.notification.request.content.userInfo
         completionHandler()
     }
 }
@@ -80,11 +80,11 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 
 extension AppDelegate: MessagingDelegate {
 
-    func messaging(_ pmhappefechaezicloeia: Messaging, didReceiveRegistrationToken fcmToken: String?) {
-        guard let iipuviczknueovffpuzks = fcmToken else {
+    func messaging(_ oojhbcsgqruxxul: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        guard let uwcarxocfqoxuixis = fcmToken else {
             return
         }
-        UserDefaults.standard.set(iipuviczknueovffpuzks, forKey: "FCMToken")
+        UserDefaults.standard.set(uwcarxocfqoxuixis, forKey: "FCMToken")
         DispatchQueue.main.async {
             NotificationCenter.default.post(name: .fcmTokenReceived, object: nil)
         }
@@ -92,531 +92,463 @@ extension AppDelegate: MessagingDelegate {
 }
 
 
-struct Eboelummnuohvvx {
-    enum Eiooucjosazlmuyhkoyhge {
-        static var fqiikiiyfezyemnxfo: String { "https://clucktailhome.xyz/clucktailhomemix.json" }
+struct Uawweronfcolaia {
+    enum Oevuiiyasagewhlcico {
+        static var ckikptuyaeiiaevwu: String { "https://clucktailhome.xyz/clucktailhomemix.json" }
     }
 
-    enum Trzhkeikitgjlghonvj {
-        static var ypahiqbeixugntv: String { "Content-Type" }
-        static var llgmlueevystoiheoip: String { "application/json" }
-        static var xquxacawyafocaviovw: String { "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1" }
-        static var bpvzapaplrikioar: String { "Unknown error" }
-        static var tjobuheibcyoza: String { "Error: " }
-        static var ebjlrkorvuanpi: String { "firstOpen" }
-        static var jagsefuiiljefostiwz: String { "wasOpened" }
-        static var ooomxpbctpokjwynacuqf: String { "orientation" }
+    enum Cusggtyjlnfmovxsh {
+        static var lchqccjpnnrmuxm: String { "Content-Type" }
+        static var havgauisouyqorakqkqix: String { "application/json" }
+        static var xzuajvmvyimocbhhkv: String { "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1" }
+        static var cuevaraaceboimiqc: String { "Unknown error" }
+        static var vwphiocyozoilxlqokberq: String { "Error: " }
+        static var iiancalzhteispwzeknwo: String { "firstOpen" }
+        static var ehkuuminaoehloooaupjs: String { "wasOpened" }
+        static var wnozlrbuivxkiyejeoew: String { "orientation" }
     }
 }
 
 
-struct Vivwubuieznore: View {
-    @State var zgtehwoonczgbjnejkaoj: Bool = true
-    let czkxztgoiezfvein: String
+struct Auyhhiurlluoncfrc: View {
+    @State var mevaawqcokgplq: Bool = true
+    let jqktpituqgfxcareor: String
 
     var body: some View {
         ZStack {
-            Tssammoqvjvbcuauyibefx(bfgzrpncnficuaahjwak: czkxztgoiezfvein, oiwejintffuaxuvhrjlg: nil)
+            Awkwkzhsnlgjewuuszc(bteqnckeeajoieeupyu: jqktpituqgfxcareor, fkgspghrzuxubilbakwqo: nil)
                 .background(Color.black.ignoresSafeArea())
                 .edgesIgnoringSafeArea(.bottom)
-                .blur(radius: zgtehwoonczgbjnejkaoj ? 15 : 0)
+                .blur(radius: mevaawqcokgplq ? 15 : 0)
 
-            if zgtehwoonczgbjnejkaoj {
+            if mevaawqcokgplq {
                 ProgressView()
                     .controlSize(.large)
                     .tint(.pink)
             }
         }
         .onAppear {
-            AppDelegate.ngobrclhxyhuwlruoau = .all
+            AppDelegate.hffpgzmzuifnvnzauozu = .all
 
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                zgtehwoonczgbjnejkaoj = false
+                mevaawqcokgplq = false
             }
         }
     }
 }
 
-private enum Teksfzacauxajepwc: Equatable {
-    case bowqoirafxrjjsji
-    case moaleiyriiqsftfgjw
-    case voaiixutjlpyqizibycs(String)
+private enum Ezyazukqieovriwha: Equatable {
+    case nzywjtqeiwtbxp
+    case owyiqvwuiaqgquhkev
+    case cnlacqseouaexqjkgyoeb(String)
 }
 
 @main
 struct HomeBarMixOptimizerApp: App {
-    @State private var cbmfioxinjuihbxjcrvco: Teksfzacauxajepwc = .bowqoirafxrjjsji
-    @State private var bjeueonaippppmrxisuiu: Bool = false
-    @State private var qvzbpijwjarsstkk: Bool = false
+    @State private var xmeiypolekwolcowpoogo: Ezyazukqieovriwha = .nzywjtqeiwtbxp
+    @State private var jjaiftxjkxxkocwgwilwe: Bool = false
+    @State private var moonfxjsvvalsqi: Bool = false
 
-    @AppStorage(Eboelummnuohvvx.Trzhkeikitgjlghonvj.ebjlrkorvuanpi) var uboxpvcyoapilemcjiilo: Bool = true
-    @AppStorage(Eboelummnuohvvx.Trzhkeikitgjlghonvj.jagsefuiiljefostiwz) var kxxuuujokylzhfqmzhw: Bool = false
+    @AppStorage(Uawweronfcolaia.Cusggtyjlnfmovxsh.iiancalzhteispwzeknwo) var scucwaibmopxwziy: Bool = true
+    @AppStorage(Uawweronfcolaia.Cusggtyjlnfmovxsh.ehkuuminaoehloooaupjs) var eusfceuwgltiltut: Bool = false
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     var body: some Scene {
         WindowGroup {
             Group {
-                switch cbmfioxinjuihbxjcrvco {
-                case .bowqoirafxrjjsji:
+                switch xmeiypolekwolcowpoogo {
+                case .nzywjtqeiwtbxp:
                     SplashView()
-                        .ignoresSafeArea()
                         .onAppear {
-                            AppDelegate.ngobrclhxyhuwlruoau = .portrait
-                            UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: Eboelummnuohvvx.Trzhkeikitgjlghonvj.ooomxpbctpokjwynacuqf)
-                            kxxuuujokylzhfqmzhw = true
+                            AppDelegate.hffpgzmzuifnvnzauozu = .portrait
+                            UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: Uawweronfcolaia.Cusggtyjlnfmovxsh.wnozlrbuivxkiyejeoew)
+                            eusfceuwgltiltut = true
 
-                            if !uboxpvcyoapilemcjiilo {
-                                if let uivnaecitxrusyhfaizotb = UserDefaults.standard.string(forKey: "savedFinalUrl"),
-                                   !uivnaecitxrusyhfaizotb.isEmpty,
-                                   !sijpwsetxpiwoeiuacjhoj(uivnaecitxrusyhfaizotb) {
-                                    iciwaaesoakoyg(uivnaecitxrusyhfaizotb) { isValid in
+                            if !scucwaibmopxwziy {
+                                if let exlahueiikvepj = UserDefaults.standard.string(forKey: "savedFinalUrl"),
+                                   !exlahueiikvepj.isEmpty,
+                                   !krkbyqjcyaifivuoqrppyi(exlahueiikvepj) {
+                                    ufuybcamaejpimcjcufigi(exlahueiikvepj) { isValid in
                                         if isValid {
-                                            cbmfioxinjuihbxjcrvco = .voaiixutjlpyqizibycs(uivnaecitxrusyhfaizotb)
+                                            xmeiypolekwolcowpoogo = .cnlacqseouaexqjkgyoeb(exlahueiikvepj)
                                         } else {
                                             UserDefaults.standard.removeObject(forKey: "savedFinalUrl")
-                                            cbmfioxinjuihbxjcrvco = .moaleiyriiqsftfgjw
+                                            xmeiypolekwolcowpoogo = .owyiqvwuiaqgquhkev
                                         }
                                     }
                                 } else {
-                                    if let uivnaecitxrusyhfaizotb = UserDefaults.standard.string(forKey: "savedFinalUrl"),
-                                       sijpwsetxpiwoeiuacjhoj(uivnaecitxrusyhfaizotb) {
+                                    if let exlahueiikvepj = UserDefaults.standard.string(forKey: "savedFinalUrl"),
+                                       krkbyqjcyaifivuoqrppyi(exlahueiikvepj) {
                                         UserDefaults.standard.removeObject(forKey: "savedFinalUrl")
                                     }
-                                    cbmfioxinjuihbxjcrvco = .moaleiyriiqsftfgjw
+                                    xmeiypolekwolcowpoogo = .owyiqvwuiaqgquhkev
                                 }
                             } else {
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
-                                    guard self.cbmfioxinjuihbxjcrvco == .bowqoirafxrjjsji else { return }
-                                    qvzbpijwjarsstkk = true
-                                    if bjeueonaippppmrxisuiu {
-                                        otltfkoswxkkgu()
+                                    guard self.xmeiypolekwolcowpoogo == .nzywjtqeiwtbxp else { return }
+                                    moonfxjsvvalsqi = true
+                                    if jjaiftxjkxxkocwgwilwe {
+                                        kzovneuahcmbzgxzakqt()
                                     }
                                 }
                             }
                         }
                         .onReceive(NotificationCenter.default.publisher(for: .pushPermissionResolved)) { _ in
-                            guard uboxpvcyoapilemcjiilo else { return }
-                            bjeueonaippppmrxisuiu = true
-                            if qvzbpijwjarsstkk {
-                                otltfkoswxkkgu()
+                            guard scucwaibmopxwziy else { return }
+                            jjaiftxjkxxkocwgwilwe = true
+                            if moonfxjsvvalsqi {
+                                kzovneuahcmbzgxzakqt()
                             }
                         }
                         .onReceive(NotificationCenter.default.publisher(for: .fcmTokenReceived)) { _ in
-                            guard uboxpvcyoapilemcjiilo else { return }
-                            qvzbpijwjarsstkk = true
-                            if bjeueonaippppmrxisuiu {
-                                otltfkoswxkkgu()
+                            guard scucwaibmopxwziy else { return }
+                            moonfxjsvvalsqi = true
+                            if jjaiftxjkxxkocwgwilwe {
+                                kzovneuahcmbzgxzakqt()
                             }
                         }
 
-                case .moaleiyriiqsftfgjw:
+                case .owyiqvwuiaqgquhkev:
                     HomeBarMixOptimizer()
 
-                case .voaiixutjlpyqizibycs(let jhuuarvfkoxvum):
-                    Tssammoqvjvbcuauyibefx(bfgzrpncnficuaahjwak: jhuuarvfkoxvum, oiwejintffuaxuvhrjlg: {
+                case .cnlacqseouaexqjkgyoeb(let exninppvhepclhwaiuyjw):
+                    Awkwkzhsnlgjewuuszc(bteqnckeeajoieeupyu: exninppvhepclhwaiuyjw, fkgspghrzuxubilbakwqo: {
                         UserDefaults.standard.removeObject(forKey: "savedFinalUrl")
-                        cbmfioxinjuihbxjcrvco = .moaleiyriiqsftfgjw
+                        xmeiypolekwolcowpoogo = .owyiqvwuiaqgquhkev
                     })
                     .preferredColorScheme(.dark)
                     .onAppear {
-                        AppDelegate.ngobrclhxyhuwlruoau = .all
+                        AppDelegate.hffpgzmzuifnvnzauozu = .all
                     }
                 }
             }
         }
     }
 
-    private func sijpwsetxpiwoeiuacjhoj(_ qqjxsnayeoguzyeta: String) -> Bool {
-        guard let vobisnqvtzhuza = URL(string: qqjxsnayeoguzyeta), let lqnfmanznaqzprqgeojmgo = vobisnqvtzhuza.host?.lowercased() else { return false }
-        return lqnfmanznaqzprqgeojmgo == "google.com" || lqnfmanznaqzprqgeojmgo == "www.google.com"
+    private func krkbyqjcyaifivuoqrppyi(_ pvfyfyaafcnkmziso: String) -> Bool {
+        guard let zhqvogoeqtetvag = URL(string: pvfyfyaafcnkmziso), let hyememlnaeayuopamyre = zhqvogoeqtetvag.host?.lowercased() else { return false }
+        return hyememlnaeayuopamyre == "google.com" || hyememlnaeayuopamyre == "www.google.com"
     }
 
-    private func iciwaaesoakoyg(_ emphqoutjufaauwqltupx: String, completion: @escaping (Bool) -> Void) {
-        guard let uatxuxyqfnceqea = URL(string: emphqoutjufaauwqltupx) else {
+    private func ufuybcamaejpimcjcufigi(_ weeyucfwuloxtfwaphaho: String, completion: @escaping (Bool) -> Void) {
+        guard let beqovnuytbumiezo = URL(string: weeyucfwuloxtfwaphaho) else {
             DispatchQueue.main.async { completion(false) }
             return
         }
 
-        var gvtxnlyexvzhae = URLRequest(url: uatxuxyqfnceqea)
-        gvtxnlyexvzhae.httpMethod = "HEAD"
-        gvtxnlyexvzhae.setValue(Eboelummnuohvvx.Trzhkeikitgjlghonvj.xquxacawyafocaviovw, forHTTPHeaderField: "User-Agent")
-        gvtxnlyexvzhae.timeoutInterval = 7
+        var wvcygtikbqhpcciyuyhl = URLRequest(url: beqovnuytbumiezo)
+        wvcygtikbqhpcciyuyhl.httpMethod = "HEAD"
+        wvcygtikbqhpcciyuyhl.setValue(Uawweronfcolaia.Cusggtyjlnfmovxsh.xzuajvmvyimocbhhkv, forHTTPHeaderField: "User-Agent")
+        wvcygtikbqhpcciyuyhl.timeoutInterval = 5
 
-        let zwjzbaosklliuqgemwk = URLSessionConfiguration.default
-        let iftxhkzbooecchmywv = URLSession(configuration: zwjzbaosklliuqgemwk, delegate: Ueefvuwlagbqekmb.vmtcwnlrtrkzilfr, delegateQueue: nil)
-
-        let uepheixeibcbkmmo = iftxhkzbooecchmywv.dataTask(with: gvtxnlyexvzhae) { _, xqhluiqepgbwwtmjkogb, jwjpfgimbmeevgvlagbjm in
-            if jwjpfgimbmeevgvlagbjm != nil {
+        let kmjjjfnczlivsiooq = URLSession(configuration: .default)
+        let ucsigwgsnxbilcufe = kmjjjfnczlivsiooq.dataTask(with: wvcygtikbqhpcciyuyhl) { _, ieosotzjmohxzliqhen, ovhvwypxzrkmcst in
+            if let _ = ovhvwypxzrkmcst {
                 DispatchQueue.main.async { completion(false) }
                 return
             }
 
-            guard let lauuuuaaiymvteur = xqhluiqepgbwwtmjkogb as? HTTPURLResponse else {
+            if let uluyapcukahvekxhyi = ieosotzjmohxzliqhen as? HTTPURLResponse,
+               let uxtiaumhobuwcocufuxhz = uluyapcukahvekxhyi.url {
+                let yegqalrracpeqguxl = !self.krkbyqjcyaifivuoqrppyi(uxtiaumhobuwcocufuxhz.absoluteString)
+                if !yegqalrracpeqguxl {
+                    UserDefaults.standard.removeObject(forKey: "savedFinalUrl")
+                }
+                DispatchQueue.main.async { completion(yegqalrracpeqguxl) }
+            } else {
                 DispatchQueue.main.async { completion(false) }
-                return
             }
-
-            let iaotriumeaeakesaoao = lauuuuaaiymvteur.url
-            if self.sijpwsetxpiwoeiuacjhoj(iaotriumeaeakesaoao?.absoluteString ?? "") {
-                UserDefaults.standard.removeObject(forKey: "savedFinalUrl")
-                DispatchQueue.main.async { completion(false) }
-                return
-            }
-
-            if let cobkraaesgneytuvjx = lauuuuaaiymvteur.value(forHTTPHeaderField: "Location"),
-               self.sijpwsetxpiwoeiuacjhoj(cobkraaesgneytuvjx) {
-                UserDefaults.standard.removeObject(forKey: "savedFinalUrl")
-                DispatchQueue.main.async { completion(false) }
-                return
-            }
-
-            let yxemwqakisiuuch = lauuuuaaiymvteur.statusCode < 500
-            DispatchQueue.main.async { completion(yxemwqakisiuuch) }
         }
-        uepheixeibcbkmmo.resume()
+        ucsigwgsnxbilcufe.resume()
     }
 
-    private func lytsxbjoeowozwjypvmvwv(_ cpsrozqpehecwxbnzopr: String) {
-        if sijpwsetxpiwoeiuacjhoj(cpsrozqpehecwxbnzopr) {
+    private func obhlzqsbeuswbea(_ hivspxvpbymqgmaj: String) {
+        if krkbyqjcyaifivuoqrppyi(hivspxvpbymqgmaj) {
             UserDefaults.standard.removeObject(forKey: "savedFinalUrl")
-            self.cbmfioxinjuihbxjcrvco = .moaleiyriiqsftfgjw
-            self.uboxpvcyoapilemcjiilo = false
+            self.xmeiypolekwolcowpoogo = .owyiqvwuiaqgquhkev
+            self.scucwaibmopxwziy = false
             return
         }
 
-        iciwaaesoakoyg(cpsrozqpehecwxbnzopr) { isValid in
+        ufuybcamaejpimcjcufigi(hivspxvpbymqgmaj) { isValid in
             if isValid {
-                UserDefaults.standard.set(cpsrozqpehecwxbnzopr, forKey: "savedFinalUrl")
-                self.cbmfioxinjuihbxjcrvco = .voaiixutjlpyqizibycs(cpsrozqpehecwxbnzopr)
-                self.uboxpvcyoapilemcjiilo = false
+                UserDefaults.standard.set(hivspxvpbymqgmaj, forKey: "savedFinalUrl")
+                self.xmeiypolekwolcowpoogo = .cnlacqseouaexqjkgyoeb(hivspxvpbymqgmaj)
+                self.scucwaibmopxwziy = false
             } else {
                 UserDefaults.standard.removeObject(forKey: "savedFinalUrl")
-                self.cbmfioxinjuihbxjcrvco = .moaleiyriiqsftfgjw
-                self.uboxpvcyoapilemcjiilo = false
+                self.xmeiypolekwolcowpoogo = .owyiqvwuiaqgquhkev
+                self.scucwaibmopxwziy = false
             }
         }
     }
 
-    private func otltfkoswxkkgu() {
-        var wwuxucoeilqlvbuq = Eboelummnuohvvx.Eiooucjosazlmuyhkoyhge.fqiikiiyfezyemnxfo
+    private func kzovneuahcmbzgxzakqt() {
+        var agmocpuarmoibjxfng = Uawweronfcolaia.Oevuiiyasagewhlcico.ckikptuyaeiiaevwu
 
-        if let ekpwxvosrumwszku = UserDefaults.standard.string(forKey: "FCMToken"), !ekpwxvosrumwszku.isEmpty  {
-            let aliocowamyttpewjaguk = ekpwxvosrumwszku.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ekpwxvosrumwszku
-            wwuxucoeilqlvbuq += "?fcm_token=\(aliocowamyttpewjaguk)"
+        if let wneompuznqkqqfuavkmakx = UserDefaults.standard.string(forKey: "FCMToken"), !wneompuznqkqqfuavkmakx.isEmpty  {
+            let euouiszvvaziikyirs = wneompuznqkqqfuavkmakx.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? wneompuznqkqqfuavkmakx
+            agmocpuarmoibjxfng += "?fcm_token=\(euouiszvvaziikyirs)"
         }
 
 
-        guard let egipwfahteccpbyaegb = URL(string: wwuxucoeilqlvbuq) else {
-            cbmfioxinjuihbxjcrvco = .moaleiyriiqsftfgjw
-            uboxpvcyoapilemcjiilo = false
+        guard let pejoiwscvpjsxj = URL(string: agmocpuarmoibjxfng) else {
+            xmeiypolekwolcowpoogo = .owyiqvwuiaqgquhkev
+            scucwaibmopxwziy = false
             return
         }
 
 
-        var ukuymoalrklzmutueoa = URLRequest(url: egipwfahteccpbyaegb)
-        ukuymoalrklzmutueoa.httpMethod = "GET"
-        ukuymoalrklzmutueoa.setValue(Eboelummnuohvvx.Trzhkeikitgjlghonvj.llgmlueevystoiheoip, forHTTPHeaderField: Eboelummnuohvvx.Trzhkeikitgjlghonvj.ypahiqbeixugntv)
-        ukuymoalrklzmutueoa.setValue(Eboelummnuohvvx.Trzhkeikitgjlghonvj.xquxacawyafocaviovw, forHTTPHeaderField: "User-Agent")
+        var mbunyvpeintjhko = URLRequest(url: pejoiwscvpjsxj)
+        mbunyvpeintjhko.httpMethod = "GET"
+        mbunyvpeintjhko.setValue(Uawweronfcolaia.Cusggtyjlnfmovxsh.havgauisouyqorakqkqix, forHTTPHeaderField: Uawweronfcolaia.Cusggtyjlnfmovxsh.lchqccjpnnrmuxm)
+        mbunyvpeintjhko.setValue(Uawweronfcolaia.Cusggtyjlnfmovxsh.xzuajvmvyimocbhhkv, forHTTPHeaderField: "User-Agent")
 
-        URLSession.shared.dataTask(with: ukuymoalrklzmutueoa) { ekhjgbeoowgaalnxolcusm, fmqwqlbzjrxauciabgr, error in
+        URLSession.shared.dataTask(with: mbunyvpeintjhko) { wwhorstnfonarviup, hleepnashawbeq, error in
             if let error = error {
                 DispatchQueue.main.async {
-                    self.cbmfioxinjuihbxjcrvco = .moaleiyriiqsftfgjw
-                    self.uboxpvcyoapilemcjiilo = false
+                    self.xmeiypolekwolcowpoogo = .owyiqvwuiaqgquhkev
+                    self.scucwaibmopxwziy = false
                 }
                 return
             }
 
-            if let asieivyuisjmbtlh = fmqwqlbzjrxauciabgr as? HTTPURLResponse {
-                if asieivyuisjmbtlh.statusCode != 200 {
+            if let imzpwjsbriviscorevcij = hleepnashawbeq as? HTTPURLResponse {
+                if imzpwjsbriviscorevcij.statusCode != 200 {
                     DispatchQueue.main.async {
-                        self.cbmfioxinjuihbxjcrvco = .moaleiyriiqsftfgjw
-                        self.uboxpvcyoapilemcjiilo = false
+                        self.xmeiypolekwolcowpoogo = .owyiqvwuiaqgquhkev
+                        self.scucwaibmopxwziy = false
                     }
                     return
                 }
             }
 
-            guard let ekhjgbeoowgaalnxolcusm = ekhjgbeoowgaalnxolcusm, !ekhjgbeoowgaalnxolcusm.isEmpty else {
+            guard let wwhorstnfonarviup = wwhorstnfonarviup, !wwhorstnfonarviup.isEmpty else {
                 DispatchQueue.main.async {
-                    self.cbmfioxinjuihbxjcrvco = .moaleiyriiqsftfgjw
-                    self.uboxpvcyoapilemcjiilo = false
+                    self.xmeiypolekwolcowpoogo = .owyiqvwuiaqgquhkev
+                    self.scucwaibmopxwziy = false
                 }
                 return
             }
 
-            var nsioovxjmisayappuabn = ekhjgbeoowgaalnxolcusm
-            if ekhjgbeoowgaalnxolcusm.count >= 3, ekhjgbeoowgaalnxolcusm.prefix(3).elementsEqual([0xEF, 0xBB, 0xBF]) {
-                nsioovxjmisayappuabn = ekhjgbeoowgaalnxolcusm.dropFirst(3)
+            var ngrqjlmoapwziyqfav = wwhorstnfonarviup
+            if wwhorstnfonarviup.count >= 3, wwhorstnfonarviup.prefix(3).elementsEqual([0xEF, 0xBB, 0xBF]) {
+                ngrqjlmoapwziyqfav = wwhorstnfonarviup.dropFirst(3)
             }
 
-            guard var tycqihtempoufhws = String(data: nsioovxjmisayappuabn, encoding: .utf8) else {
+            guard var uneunuzvaxahqcaojx = String(data: ngrqjlmoapwziyqfav, encoding: .utf8) else {
                 DispatchQueue.main.async {
-                    self.cbmfioxinjuihbxjcrvco = .moaleiyriiqsftfgjw
-                    self.uboxpvcyoapilemcjiilo = false
+                    self.xmeiypolekwolcowpoogo = .owyiqvwuiaqgquhkev
+                    self.scucwaibmopxwziy = false
                 }
                 return
             }
 
-            tycqihtempoufhws = tycqihtempoufhws
+            uneunuzvaxahqcaojx = uneunuzvaxahqcaojx
                 .replacingOccurrences(of: "\u{00A0}", with: " ")
                 .replacingOccurrences(of: "\u{FEFF}", with: "")
                 .trimmingCharacters(in: .whitespacesAndNewlines)
 
 
-            guard let bfsxesgesaajoifgqexe = tycqihtempoufhws.data(using: .utf8) else {
+            guard let hfcnaoolnzouonopeoa = uneunuzvaxahqcaojx.data(using: .utf8) else {
                 DispatchQueue.main.async {
-                    self.cbmfioxinjuihbxjcrvco = .moaleiyriiqsftfgjw
-                    self.uboxpvcyoapilemcjiilo = false
+                    self.xmeiypolekwolcowpoogo = .owyiqvwuiaqgquhkev
+                    self.scucwaibmopxwziy = false
                 }
                 return
             }
 
             do {
-                if let kuhmktgmonqmijijmhhe = try JSONSerialization.jsonObject(with: bfsxesgesaajoifgqexe, options: [.allowFragments]) as? [[String: Any]] {
+                if let sukzaothfhwuwvr = try JSONSerialization.jsonObject(with: hfcnaoolnzouonopeoa, options: [.allowFragments]) as? [[String: Any]] {
 
-                    let tmkbntaptnbemfo = kuhmktgmonqmijijmhhe.count > 1 || !kuhmktgmonqmijijmhhe.contains { ($0["name"] as? String) == "offer_whiteApp" }
+                    let cgjyoyqaaaxaooe = sukzaothfhwuwvr.count > 1 || !sukzaothfhwuwvr.contains { ($0["name"] as? String) == "offer_whiteApp" }
 
-                    if tmkbntaptnbemfo {
+                    if cgjyoyqaaaxaooe {
                         DispatchQueue.main.async {
                             UserDefaults.standard.removeObject(forKey: "savedFinalUrl")
-                            self.cbmfioxinjuihbxjcrvco = .moaleiyriiqsftfgjw
-                            self.uboxpvcyoapilemcjiilo = false
+                            self.xmeiypolekwolcowpoogo = .owyiqvwuiaqgquhkev
+                            self.scucwaibmopxwziy = false
                         }
-                    } else if let eeozaqpullsaamelrex = kuhmktgmonqmijijmhhe.first,
-                              let ynfevalqrexauen = eeozaqpullsaamelrex["google_link"] as? String,
-                              !ynfevalqrexauen.isEmpty {
+                    } else if let igywchokxyerbooaetz = sukzaothfhwuwvr.first,
+                              let eysvotfvigoomrr = igywchokxyerbooaetz["google_link"] as? String,
+                              !eysvotfvigoomrr.isEmpty {
 
                         DispatchQueue.main.async {
-                            self.lytsxbjoeowozwjypvmvwv(ynfevalqrexauen)
+                            self.obhlzqsbeuswbea(eysvotfvigoomrr)
                         }
                     } else {
                         DispatchQueue.main.async {
-                            self.cbmfioxinjuihbxjcrvco = .moaleiyriiqsftfgjw
-                            self.uboxpvcyoapilemcjiilo = false
+                            self.xmeiypolekwolcowpoogo = .owyiqvwuiaqgquhkev
+                            self.scucwaibmopxwziy = false
                         }
                     }
                 } else {
                     DispatchQueue.main.async {
-                        self.cbmfioxinjuihbxjcrvco = .moaleiyriiqsftfgjw
-                        self.uboxpvcyoapilemcjiilo = false
+                        self.xmeiypolekwolcowpoogo = .owyiqvwuiaqgquhkev
+                        self.scucwaibmopxwziy = false
                     }
                 }
             } catch {
+                print("\(Uawweronfcolaia.Cusggtyjlnfmovxsh.vwphiocyozoilxlqokberq)\(error.localizedDescription)")
                 DispatchQueue.main.async {
-                    self.cbmfioxinjuihbxjcrvco = .moaleiyriiqsftfgjw
-                    self.uboxpvcyoapilemcjiilo = false
+                    self.xmeiypolekwolcowpoogo = .owyiqvwuiaqgquhkev
+                    self.scucwaibmopxwziy = false
                 }
             }
         }.resume()
     }
 }
 
-final class Ueefvuwlagbqekmb: NSObject, URLSessionTaskDelegate {
-    static let vmtcwnlrtrkzilfr = Ueefvuwlagbqekmb()
-
-    private static func xmoilutafeaauze(_ zbbavpihtojfmocgoqaakl: URL?) -> Bool {
-        guard let wombmvvjmqjpkipbwonoyi = zbbavpihtojfmocgoqaakl?.host?.lowercased() else { return false }
-        return wombmvvjmqjpkipbwonoyi == "google.com" || wombmvvjmqjpkipbwonoyi == "www.google.com"
-    }
-
-    func urlSession(_ vifonelgefifbeyciwia: URLSession, task: URLSessionTask, willPerformHTTPRedirection ixxakowazebgspjn: HTTPURLResponse, newRequest qseoeuxzuqzamupeacutzb: URLRequest, completionHandler: @escaping (URLRequest?) -> Void) {
-        if Ueefvuwlagbqekmb.xmoilutafeaauze(qseoeuxzuqzamupeacutzb.url) {
-            completionHandler(nil)
-            return
-        }
-        completionHandler(qseoeuxzuqzamupeacutzb)
-    }
-}
-
 import SwiftUI
 import WebKit
 
-struct Yraekajrozvubvzefwpaum: UIViewRepresentable {
-    let kuyzijhhkojvojtg: String
-    var jjawstoccyeewbxb: (() -> Void)? = nil
-    @Binding var aqolqzauwvvuopealfbvt: WKWebView?
-    @Binding var uruppeezlpnxtrsyfpcf: WKWebView?
+struct Qeiyaqpryaphrhn: UIViewRepresentable {
+    let taauhjaxiyijijj: String
+    var suqetpcqxeirojrsm: (() -> Void)? = nil
+    @Binding var eheyxetclunihaamsh: WKWebView?
+    @Binding var oatpmithcnmuboifghgpua: WKWebView?
 
     func makeUIView(context: Context) -> WKWebView {
-        let xhaaoyklrpnfhouu = WKPreferences()
-        xhaaoyklrpnfhouu.javaScriptCanOpenWindowsAutomatically = true
+        let kyaqootxosoqfmkiimmrlj = WKPreferences()
+        kyaqootxosoqfmkiimmrlj.javaScriptCanOpenWindowsAutomatically = true
 
-        let qzjfweoejnerkhkknyi = WKWebViewConfiguration()
-        qzjfweoejnerkhkknyi.preferences = xhaaoyklrpnfhouu
-        qzjfweoejnerkhkknyi.allowsInlineMediaPlayback = true
-        qzjfweoejnerkhkknyi.defaultWebpagePreferences.allowsContentJavaScript = true
-        qzjfweoejnerkhkknyi.applicationNameForUserAgent = Eboelummnuohvvx.Trzhkeikitgjlghonvj.xquxacawyafocaviovw
+        let wuahchglmywggqnxbs = WKWebViewConfiguration()
+        wuahchglmywggqnxbs.preferences = kyaqootxosoqfmkiimmrlj
+        wuahchglmywggqnxbs.allowsInlineMediaPlayback = true
+        wuahchglmywggqnxbs.defaultWebpagePreferences.allowsContentJavaScript = true
+        wuahchglmywggqnxbs.applicationNameForUserAgent = Uawweronfcolaia.Cusggtyjlnfmovxsh.xzuajvmvyimocbhhkv
 
-        let bkljcsehnupfunmougq = WKWebView(frame: .zero, configuration: qzjfweoejnerkhkknyi)
-        bkljcsehnupfunmougq.navigationDelegate = context.coordinator
-        bkljcsehnupfunmougq.uiDelegate = context.coordinator
-        bkljcsehnupfunmougq.allowsBackForwardNavigationGestures = true
-        bkljcsehnupfunmougq.isOpaque = false
-        bkljcsehnupfunmougq.backgroundColor = .black
-        bkljcsehnupfunmougq.scrollView.backgroundColor = .black
-        bkljcsehnupfunmougq.alpha = 0
-        context.coordinator.wvijhmologxicpyauk = bkljcsehnupfunmougq
+        let hjcopxvouemwzmsk = WKWebView(frame: .zero, configuration: wuahchglmywggqnxbs)
+        hjcopxvouemwzmsk.navigationDelegate = context.coordinator
+        hjcopxvouemwzmsk.uiDelegate = context.coordinator
+        hjcopxvouemwzmsk.allowsBackForwardNavigationGestures = true
+        hjcopxvouemwzmsk.isOpaque = false
+        hjcopxvouemwzmsk.backgroundColor = .black
+        hjcopxvouemwzmsk.scrollView.backgroundColor = .black
 
-        if let iqqciiueheusuwz = URL(string: kuyzijhhkojvojtg) {
-            bkljcsehnupfunmougq.load(URLRequest(url: iqqciiueheusuwz))
+        if let loeblvtvuegmkqeb = URL(string: taauhjaxiyijijj) {
+            hjcopxvouemwzmsk.load(URLRequest(url: loeblvtvuegmkqeb))
         }
 
-        DispatchQueue.main.async { self.aqolqzauwvvuopealfbvt = bkljcsehnupfunmougq }
-        return bkljcsehnupfunmougq
+        DispatchQueue.main.async { self.eheyxetclunihaamsh = hjcopxvouemwzmsk }
+        return hjcopxvouemwzmsk
     }
 
-    func updateUIView(_ fqoetmfckmjojhuifeaza: WKWebView, context: Context) {}
+    func updateUIView(_ keibyzbwakfxxah: WKWebView, context: Context) {}
 
     func makeCoordinator() -> Coordinator {
-        Coordinator(iopaongaiiuopqpribsoni: jjawstoccyeewbxb, pvxqnkekzxjiyfqob: $uruppeezlpnxtrsyfpcf)
+        Coordinator(qepkmaezzakuyvamylae: suqetpcqxeirojrsm, owxzofalcjsavy: $oatpmithcnmuboifghgpua)
     }
 
     final class Coordinator: NSObject, WKNavigationDelegate, WKUIDelegate {
-        private let uprfmufuectwaqapazwt: (() -> Void)?
-        @Binding var hbklexjmnlugteispbcnin: WKWebView?
-        weak var wvijhmologxicpyauk: WKWebView?
+        private let iymxmuogabziui: (() -> Void)?
+        @Binding var urnxcizimuymoe: WKWebView?
 
-        init(iopaongaiiuopqpribsoni: (() -> Void)?, pvxqnkekzxjiyfqob: Binding<WKWebView?>) {
-            self.uprfmufuectwaqapazwt = iopaongaiiuopqpribsoni
-            self._hbklexjmnlugteispbcnin = pvxqnkekzxjiyfqob
+        init(qepkmaezzakuyvamylae: (() -> Void)?, owxzofalcjsavy: Binding<WKWebView?>) {
+            self.iymxmuogabziui = qepkmaezzakuyvamylae
+            self._urnxcizimuymoe = owxzofalcjsavy
             super.init()
         }
 
-        func webView(_ qbxemaoacoauiik: WKWebView, createWebViewWith rapiueotlgaqqiqhkseuq: WKWebViewConfiguration, for jgemclgngizpelakbeefoi: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
-            if jgemclgngizpelakbeefoi.targetFrame?.isMainFrame != true {
-                let ghwrjreyjlajwm = WKWebView(frame: qbxemaoacoauiik.bounds, configuration: rapiueotlgaqqiqhkseuq)
-                ghwrjreyjlajwm.navigationDelegate = self
-                ghwrjreyjlajwm.uiDelegate = self
-                qbxemaoacoauiik.addSubview(ghwrjreyjlajwm)
-                DispatchQueue.main.async { self.hbklexjmnlugteispbcnin = ghwrjreyjlajwm }
-                return ghwrjreyjlajwm
+        func webView(_ zcimupefweoyapxiuliu: WKWebView, createWebViewWith irrkaujkbihyxrkuo: WKWebViewConfiguration, for tbputeamiirsqjxwvnf: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
+            if tbputeamiirsqjxwvnf.targetFrame?.isMainFrame != true {
+                let iutxfnappjioubiewgi = WKWebView(frame: zcimupefweoyapxiuliu.bounds, configuration: irrkaujkbihyxrkuo)
+                iutxfnappjioubiewgi.navigationDelegate = self
+                iutxfnappjioubiewgi.uiDelegate = self
+                zcimupefweoyapxiuliu.addSubview(iutxfnappjioubiewgi)
+                DispatchQueue.main.async { self.urnxcizimuymoe = iutxfnappjioubiewgi }
+                return iutxfnappjioubiewgi
             }
             return nil
         }
 
-        func webViewDidClose(_ fyivxwlzooobxvtepwi: WKWebView) {
-            if fyivxwlzooobxvtepwi == hbklexjmnlugteispbcnin {
-                hbklexjmnlugteispbcnin?.removeFromSuperview()
-                DispatchQueue.main.async { self.hbklexjmnlugteispbcnin = nil }
+        func webViewDidClose(_ nnzfleuxqjyziehecws: WKWebView) {
+            if nnzfleuxqjyziehecws == urnxcizimuymoe {
+                urnxcizimuymoe?.removeFromSuperview()
+                DispatchQueue.main.async { self.urnxcizimuymoe = nil }
             }
         }
 
-        private func vepzuixygtihfvq(_ cpnnxfiyiibnukjo: URL?) -> Bool {
-            guard let uvjsxmyagnuamnem = cpnnxfiyiibnukjo else { return false }
-            let szubqqfiephoksxita = uvjsxmyagnuamnem.absoluteString.lowercased()
-            let ebnuuaaijesjwvhuzsa = uvjsxmyagnuamnem.host?.lowercased() ?? ""
-            if ebnuuaaijesjwvhuzsa.contains("accounts.google.com") { return true }
-            if ebnuuaaijesjwvhuzsa.contains("googleapis.com") && szubqqfiephoksxita.contains("oauth") { return true }
+        private func eupazyeeoubuiebioeuvis(_ psguooqihsojseuqegr: URL?) -> Bool {
+            guard let lufoqhteeyhyevqeoczvso = psguooqihsojseuqegr else { return false }
+            let ceeqwzphaueiubs = lufoqhteeyhyevqeoczvso.absoluteString.lowercased()
+            let qgatiqsefcewejni = lufoqhteeyhyevqeoczvso.host?.lowercased() ?? ""
+            if qgatiqsefcewejni.contains("accounts.google.com") { return true }
+            if qgatiqsefcewejni.contains("googleapis.com") && ceeqwzphaueiubs.contains("oauth") { return true }
             return false
         }
 
-        private func kiwrlwujabhugc(_ olnietymslsoohtwfq: URL?) -> Bool {
-            guard let olnietymslsoohtwfq = olnietymslsoohtwfq, let ybywgcbyjesuosioux = olnietymslsoohtwfq.host?.lowercased() else { return false }
-            return ybywgcbyjesuosioux == "google.com" || ybywgcbyjesuosioux == "www.google.com"
-        }
+        func webView(_ xsnlmimzsebxzmtbfmwu: WKWebView, decidePolicyFor eovxnmlhupwcaqovaa: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
 
-        func webView(_ bomwyaggfqxlctsjipoalu: WKWebView, decidePolicyFor fxvqaebaacswjm: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-
-            let gujeruilabsyyogiie = """
+            let pvnaaubumqgzepqxmpi = """
         var as=document.getElementsByTagName('a');
         if(as){for (var i=0;i<as.length;i++){
             if(as[i].getAttribute('target')=='_blank'){as[i].setAttribute('target','_self');}
         }}
         """
-            bomwyaggfqxlctsjipoalu.evaluateJavaScript(gujeruilabsyyogiie, completionHandler: nil)
+            xsnlmimzsebxzmtbfmwu.evaluateJavaScript(pvnaaubumqgzepqxmpi, completionHandler: nil)
 
-            let uxjhbamnepjsahwluie = fxvqaebaacswjm.request.url
-
-            if let uxjhbamnepjsahwluie = uxjhbamnepjsahwluie, kiwrlwujabhugc(uxjhbamnepjsahwluie) {
+            let peqauigejmzzguzy = eovxnmlhupwcaqovaa.request.url
+            if eovxnmlhupwcaqovaa.navigationType == .other,
+               eupazyeeoubuiebioeuvis(peqauigejmzzguzy),
+               let kywqasjuvpkvgibej = xsnlmimzsebxzmtbfmwu.url?.host?.lowercased(),
+               !kywqasjuvpkvgibej.contains("google.com") {
                 decisionHandler(.cancel)
-                DispatchQueue.main.async {
-                    UserDefaults.standard.removeObject(forKey: "savedFinalUrl")
-                    self.uprfmufuectwaqapazwt?()
-                }
-                return
-            }
-
-            if fxvqaebaacswjm.navigationType == .other,
-               vepzuixygtihfvq(uxjhbamnepjsahwluie),
-               let cttqtioijamjewrfcqa = bomwyaggfqxlctsjipoalu.url?.host?.lowercased(),
-               !cttqtioijamjewrfcqa.contains("google.com") {
-                decisionHandler(.cancel)
-                let awnflamuqwnkgoko = bomwyaggfqxlctsjipoalu.backForwardList.backList
-                if let ouxeomlbeefewpienouvb = awnflamuqwnkgoko.last(where: {
-                    let hoqagwlumkkbos = $0.url.host?.lowercased() ?? ""
-                    let aysmhsfluokjyeagqvxm = $0.url.absoluteString.lowercased()
-                    return !hoqagwlumkkbos.contains("google.com") && !aysmhsfluokjyeagqvxm.contains("accounts.google.com")
+                let oerzooptnflpkaipc = xsnlmimzsebxzmtbfmwu.backForwardList.backList
+                if let qkvooahioaechx = oerzooptnflpkaipc.last(where: {
+                    let znmwaqvaqvboreg = $0.url.host?.lowercased() ?? ""
+                    let ceqlahyezoautrejhzsaut = $0.url.absoluteString.lowercased()
+                    return !znmwaqvaqvboreg.contains("google.com") && !ceqlahyezoautrejhzsaut.contains("accounts.google.com")
                 }) {
-                    bomwyaggfqxlctsjipoalu.go(to: ouxeomlbeefewpienouvb)
+                    xsnlmimzsebxzmtbfmwu.go(to: qkvooahioaechx)
                 }
                 return
             }
 
-            if fxvqaebaacswjm.navigationType == .linkActivated {
-                bomwyaggfqxlctsjipoalu.load(fxvqaebaacswjm.request)
+            if eovxnmlhupwcaqovaa.navigationType == .linkActivated {
+                xsnlmimzsebxzmtbfmwu.load(eovxnmlhupwcaqovaa.request)
                 decisionHandler(.cancel)
                 return
             }
             decisionHandler(.allow)
         }
 
-        func webView(_ qhkgazahnkooopao: WKWebView, decidePolicyFor jnphriulwxuvula: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
-            if kiwrlwujabhugc(jnphriulwxuvula.response.url) {
-                decisionHandler(.cancel)
-                DispatchQueue.main.async {
-                    UserDefaults.standard.removeObject(forKey: "savedFinalUrl")
-                    self.uprfmufuectwaqapazwt?()
-                }
-                return
-            }
+        func webView(_ ruzyoarfjaieibj: WKWebView, decidePolicyFor soeeicqiuplhetuhnul: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
             decisionHandler(.allow)
         }
 
-        func webView(_ wssoeoaubzeohcx: WKWebView, didFinish bonlpkpsfewtfbnux: WKNavigation!) {
-            if kiwrlwujabhugc(wssoeoaubzeohcx.url) {
-                DispatchQueue.main.async {
-                    UserDefaults.standard.removeObject(forKey: "savedFinalUrl")
-                    self.uprfmufuectwaqapazwt?()
-                }
-                return
-            }
+        func webView(_ vzvfoikxwqfcskxof: WKWebView, didFinish negarkshuvyecnoyygy: WKNavigation!) {
+            vzvfoikxwqfcskxof.allowsBackForwardNavigationGestures = true
+            vzvfoikxwqfcskxof.configuration.mediaTypesRequiringUserActionForPlayback = .all
+            vzvfoikxwqfcskxof.configuration.allowsInlineMediaPlayback = false
+            vzvfoikxwqfcskxof.configuration.allowsAirPlayForMediaPlayback = false
 
-            wssoeoaubzeohcx.allowsBackForwardNavigationGestures = true
-            wssoeoaubzeohcx.configuration.mediaTypesRequiringUserActionForPlayback = .all
-            wssoeoaubzeohcx.configuration.allowsInlineMediaPlayback = false
-            wssoeoaubzeohcx.configuration.allowsAirPlayForMediaPlayback = false
-
-            if wssoeoaubzeohcx.alpha == 0 {
-                UIView.animate(withDuration: 0.15) { wssoeoaubzeohcx.alpha = 1 }
-            }
-
-            if let uaxizhuiklbmjia = wssoeoaubzeohcx.url?.absoluteString {
-                if !vepzuixygtihfvq(wssoeoaubzeohcx.url) && !kiwrlwujabhugc(wssoeoaubzeohcx.url) {
-                    UserDefaults.standard.set(uaxizhuiklbmjia, forKey: "savedFinalUrl")
+            if let oornjekhofaszb = vzvfoikxwqfcskxof.url?.absoluteString {
+                if !eupazyeeoubuiebioeuvis(vzvfoikxwqfcskxof.url) {
+                    UserDefaults.standard.set(oornjekhofaszb, forKey: "savedFinalUrl")
                 }
             }
         }
     }
 }
 
-struct Tssammoqvjvbcuauyibefx: View {
-    let bfgzrpncnficuaahjwak: String
-    var oiwejintffuaxuvhrjlg: (() -> Void)? = nil
-    @State private var pknrjbxtoipijo: WKWebView?
-    @State private var vbfkianiutigfgfcejk: WKWebView?
+struct Awkwkzhsnlgjewuuszc: View {
+    let bteqnckeeajoieeupyu: String
+    var fkgspghrzuxubilbakwqo: (() -> Void)? = nil
+    @State private var atuveyfrlloabiuwotrf: WKWebView?
+    @State private var wuqausghcczevzefubpb: WKWebView?
 
     var body: some View {
         ZStack {
-            Yraekajrozvubvzefwpaum(kuyzijhhkojvojtg: bfgzrpncnficuaahjwak,
-                    jjawstoccyeewbxb: oiwejintffuaxuvhrjlg,
-                    aqolqzauwvvuopealfbvt: $pknrjbxtoipijo,
-                    uruppeezlpnxtrsyfpcf: $vbfkianiutigfgfcejk)
+            Qeiyaqpryaphrhn(taauhjaxiyijijj: bteqnckeeajoieeupyu,
+                    suqetpcqxeirojrsm: fkgspghrzuxubilbakwqo,
+                    eheyxetclunihaamsh: $atuveyfrlloabiuwotrf,
+                    oatpmithcnmuboifghgpua: $wuqausghcczevzefubpb)
             .background(Color.black.ignoresSafeArea())
 
             VStack {
                 HStack {
-                    Button(action: { gvxrievaafayfitpt() }) {
+                    Button(action: { hbaebcyshzrhzkkhrzoieh() }) {
                         Image(systemName: "chevron.backward.circle.fill")
                             .resizable()
                             .frame(width: 20, height: 20)
@@ -633,34 +565,34 @@ struct Tssammoqvjvbcuauyibefx: View {
         .statusBarHidden(true)
     }
 
-    private func kpxelioffkikmxt(_ nawvyfxozeyuox: URL) -> Bool {
-        let akpxaormfnloarfrzkb = nawvyfxozeyuox.absoluteString.lowercased()
-        let xhaswrvboxwqeubaeq = nawvyfxozeyuox.host?.lowercased() ?? ""
-        if xhaswrvboxwqeubaeq.contains("accounts.google.com") || xhaswrvboxwqeubaeq.contains("googleapis.com") { return true }
-        if akpxaormfnloarfrzkb.contains("accounts.google.com") || akpxaormfnloarfrzkb.contains("oauth2") && akpxaormfnloarfrzkb.contains("google") { return true }
+    private func tgrzpshimineaoohxnywuo(_ iojvazeeuhoaao: URL) -> Bool {
+        let iuzsaqovkvuovvmmul = iojvazeeuhoaao.absoluteString.lowercased()
+        let zxfusrfccxkzwoi = iojvazeeuhoaao.host?.lowercased() ?? ""
+        if zxfusrfccxkzwoi.contains("accounts.google.com") || zxfusrfccxkzwoi.contains("googleapis.com") { return true }
+        if iuzsaqovkvuovvmmul.contains("accounts.google.com") || iuzsaqovkvuovvmmul.contains("oauth2") && iuzsaqovkvuovvmmul.contains("google") { return true }
         return false
     }
 
-    private func gvxrievaafayfitpt() {
-        if let snorljpvylgsysoie = vbfkianiutigfgfcejk {
-            snorljpvylgsysoie.removeFromSuperview()
-            vbfkianiutigfgfcejk = nil
+    private func hbaebcyshzrhzkkhrzoieh() {
+        if let aolugfqoipqahmu = wuqausghcczevzefubpb {
+            aolugfqoipqahmu.removeFromSuperview()
+            wuqausghcczevzefubpb = nil
             return
         }
 
-        guard let tryaaavesflpajbx = pknrjbxtoipijo, tryaaavesflpajbx.canGoBack else { return }
+        guard let iequyvvybsyuahojtv = atuveyfrlloabiuwotrf, iequyvvybsyuahojtv.canGoBack else { return }
 
-        let wqfqvkxphvlmzgiiy = tryaaavesflpajbx.url.map { kpxelioffkikmxt($0) } ?? false
+        let ikvvxobiemgaqixpltxaug = iequyvvybsyuahojtv.url.map { tgrzpshimineaoohxnywuo($0) } ?? false
 
-        if wqfqvkxphvlmzgiiy {
-            let sjwrqiybunoregzii = tryaaavesflpajbx.backForwardList.backList
-            if let vaxarjlrhjvbiarppou = sjwrqiybunoregzii.last(where: { !kpxelioffkikmxt($0.url) }) {
-                tryaaavesflpajbx.go(to: vaxarjlrhjvbiarppou)
+        if ikvvxobiemgaqixpltxaug {
+            let lhkuqhfxhalknbw = iequyvvybsyuahojtv.backForwardList.backList
+            if let hcuaaapzcwunojeqi = lhkuqhfxhalknbw.last(where: { !tgrzpshimineaoohxnywuo($0.url) }) {
+                iequyvvybsyuahojtv.go(to: hcuaaapzcwunojeqi)
             } else {
-                tryaaavesflpajbx.goBack()
+                iequyvvybsyuahojtv.goBack()
             }
         } else {
-            tryaaavesflpajbx.goBack()
+            iequyvvybsyuahojtv.goBack()
         }
     }
 }
